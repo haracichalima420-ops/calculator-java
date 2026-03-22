@@ -32,3 +32,31 @@ output: ERROR
 u programu ne funkcioniše računanje negativnih brojeva, jer ga logika vjerovatno interpretira kao aritmetički operator i ne može ga spojiti s
 brojem. ovo je softverska greška/bug.
 
+unit test 
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class CalculatorTest {
+    
+    public static void main(String[] args) {
+
+        ArrayList<Float> numbers = new ArrayList<>(Arrays.asList(2f, 3f));
+        ArrayList<String> operations = new ArrayList<>(Arrays.asList("+"));
+
+        Calculator.Calculate(numbers, operations);
+
+        System.out.println("2 + 3 = " + numbers.get(0));
+        
+        numbers = new ArrayList<>(Arrays.asList(5f, 0f));
+        operations = new ArrayList<>(Arrays.asList("/"));
+
+        Calculator.Calculate(numbers, operations);
+
+        System.out.println("5 / 0 = " + numbers.get(0));
+
+    }    
+}
+
+output za “2+3 = “ je bio ”5.00” i za “5/0 = ” je bio "Infinity"
