@@ -1,0 +1,34 @@
+input: 5-3 (ASCII hyphen minus)
+output: 2.00 
+input: 5−3 (unicode matematički minus)
+output: ERROR
+
+input: 6*2 
+output: 12.00
+input: 6×2
+output: ERROR
+
+input: 16/4
+outout: 4.00
+input: 16÷4
+output: 4
+
+program prihvata samo aritmetičke operatore koji su standardni za java programski jezik. ovo nije bug, ali može biti usability issue jer se u 
+normalnom korisničkom okruženju koriste ”×” i ”÷” za više računske operacije umjesto ”*” i ”/”.
+
+input: -9/0
+output: -Infinity
+
+ovaj output je logički ispravan za float tip podataka, ali nije user-friendly
+
+input: 4+(-2)
+output: ERROR
+input: 8-(-2)
+output: ERROR
+input: -14/(-7)
+output: ERROR
+input: 4*(-4)
+output: ERROR
+u programu ne funkcioniše računanje negativnih brojeva, jer ga logika vjerovatno interpretira kao aritmetički operator i ne može ga spojiti s
+brojem. ovo je softverska greška/bug.
+
